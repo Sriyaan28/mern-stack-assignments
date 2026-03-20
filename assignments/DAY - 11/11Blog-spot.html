@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBlog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: rgb(249, 69, 99);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background-color: rgb(242, 242, 242);
+        }
+
+        nav ul {
+            width: 300px;
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+
+        }
+
+        nav ul li {
+            padding: 3px;
+            border-radius: 3px;
+        }
+
+        nav ul li:hover,
+        section button:hover {
+            color: white;
+            background-color: rgb(249, 69, 99);
+
+        }
+
+        .search {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-btn {
+            background-color: rgb(249, 69, 99);
+        }
+
+        main {
+            margin: 30px 150px;
+            color: rgb(242, 242, 242);
+            ;
+            background-color: rgb(249, 69, 99);
+
+        }
+
+        main h1 {
+            text-align: center;
+        }
+
+        .blogger {
+            display: flex;
+            gap: 40px;
+        }
+
+        section img {
+            width: 100%;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        section button {
+            padding: 4px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 2px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(242, 242, 242);
+            padding: 10px 80px;
+            font-size: 10px;
+        }
+
+        section ul {
+            list-style-type: none;
+        }
+
+        @media screen and (max-width:720px) {
+            body
+            {
+                font-size: smaller;
+            }
+            h1
+            {
+                font-size: 1rem;
+            }
+            nav {
+                flex-wrap: wrap;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .blogger {
+                flex-direction: column;
+            }
+
+            section button {
+                display: none;
+            }
+
+            section img {
+                width: 100%;
+                border-radius: 10%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1 class="logo">QuickBlog</h1>
+        <ul>
+            <li>Home</li>
+            <li>Articles</li>
+            <li>Content</li>
+        </ul>
+        <form>
+            <input class="search" type="text" placeholder="">
+            <button class="search search-btn">Search</button>
+        </form>
+    </nav>
+    <main>
+        <h1>Best Platform For Blogs</h2>
+            <h1>25000+ Users</h2>
+                <h3>Top Bloggers:</h3>
+                <div class="blogger">
+                    <section>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAY1BMVEX////MzMxNTU3Pz8/JycnGxsbS0tJISEj29vbx8fHW1tZERETr6+s6Ojo/Pz/i4uJaWlqlpaVsbGy5ubmurq6/v7+CgoKVlZWdnZ1kZGSLi4tzc3N8fHxVVVUyMjJfX18kJCTlbK1iAAAFGUlEQVR4nO2b2XarMAxFAwYDJpgxE1yS/P9XXkOTDgmSjTC0Dz6PXS3dkcSxLDu7nZOTk5OTk5OTk5OTk5OTTnGyH5Qk8W+TDIqTXHihUqAUjvJE/ptscS6YYvFepH7ERP4rXEnuha8438lCL082RtoL7y1Cb1ye2G9HFOd6oifXVmnMmSHSiMXyDZD2c5A+sNZOYixmIo0Sq+Zw/24ARsEKVgyWoBB9YImVkGJOCtODiq+SwgT9p2wU+isreOkeCRMXQV0q1YHgSLCsFxbCxMKy6v1Iye+rMoTjZZsKZmJB22eR/1CU9W2wERXIxFh9S/0fSm81GCybVGCN8/qYRv6LovRYCwArsFbtMRQmbwLpA6sLoYq35QzA83l5SaeQRqyiBJyW22ECljt+mg7TM1in6c9ix9uBIhdnMEyPgoeoLBR7PM3EGg2T70uIanlZQcmrkNw9MtivlUAgebzJdEy+nzXTxrA4gYDfMH2gVKgq6K+XMeVQRRkwKSooVIv69hj6qKW2zAelJWBxbEmtA4EyKXM0f4tCNf1IBdWbMPk+8P4p0ZnA5oBLMyi5QrsAbhRCA0MYlEEP8MheBXYs7GAKdQAbPmoPA5W5x2pTqBrMH7XUwdhbgKKWegLOn2ykL6RZFZg9FXxTKGQTQcsfsknnRt6pLB3ZBpLeP2iJGaEKMyrYPIlLTYJtiU2XGWzDTDEFpKQ8djSD+odEm1RU2HiMt2ZdQotFilJUyIdk4p9hpKBN6SgCFDIlPxjWudr+HeCnhFah2MmwSRh2NHCoCFAxDCUuhoFSobrAbkfwdMQRhHGgVKjgUg/newIykTJd+QYhqx/BqBAo0x5hhIL7BEL3iUCZ9p0jVLgNlMfnQME1ZRnqaOTng9LjVlCGW9ERqkR8an6hY01CcDGFuiBPIUAh5ukZLn3j4odAERoqBIqXpu0wNEwYoeYzYVAeK7B552ec0gJrEihQyOOUVZ1u+kne7YR9MFLrgp6BMtHoI9Wg3RSpycPa4WEB1A5eenjZG6Eo7TDmCUphoYMq4BVmhKJsHLAtlhK/6aAuyJvnUad5+Imx1qtQj/Kow6Acj1SpafUk5lFKtG075umDK+iOQfCSIg44UKdSVB2av6jDa5I69dSYAj5Lh2boD5GHZvihPz5QQMcI3pIjUs3rg+3d03aNd28QdhdhPIVEoIBztWegFpwZoR+WY8eQ8ozXOZ0JL3WGOZVE+uCFxyAxlgOGnflBZ32PP110OIpOzrBNKTasXni0hk+pyFALDyF3e+CxXIj8jNXUORecA2CLz9unGlDG61N3SdHFL41u3amewrJwM+H9CgDjQevLSN+jR9Jvg3csC1cAXh2UifqUme+Qs/doWbkZ9D2BjDedb4w0Yvld8x3L1pXBT7NirLxkxqPFzzRmVfl1o8rSBZznVSUVpUpfSZNYUfUZLWuXGIeNDQ/Kan6Uvkcr4DYvdQ3FHrYFLUpf0Sra0E6RPyWuMybCkOTV8r3Y2mSioYlVWttl2u0OS6mi9GCbSRlDP8ufXpX2tszgh/JqQV3Jaq0b/C2ZSrYrISmFkpTCVFKmdsbat3L+MiPbtb/lcChmnDcMyooV3ro3lbc5xyC3cgMkpaSJzFZB9WvNht99qrtI+ybKtLNu4RqJs7zCJh+lV3le6xsgqPJzV8jslSxKM1l0v0P04GLN0b/fr9lD1/u9PzabfP9Kq5wHB6WA/wkaJycnJycnJycnJycnpz+u/54vUKl7BnxvAAAAAElFTkSuQmCC"
+                            alt="blogger photo">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur dolore alias officiis
+                            blanditiis,
+                            quibusdam maiores.</p>
+                        <button>Know more</button>
+                    </section>
+                    <section>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAY1BMVEX////MzMxNTU3Pz8/JycnGxsbS0tJISEj29vbx8fHW1tZERETr6+s6Ojo/Pz/i4uJaWlqlpaVsbGy5ubmurq6/v7+CgoKVlZWdnZ1kZGSLi4tzc3N8fHxVVVUyMjJfX18kJCTlbK1iAAAFGUlEQVR4nO2b2XarMAxFAwYDJpgxE1yS/P9XXkOTDgmSjTC0Dz6PXS3dkcSxLDu7nZOTk5OTk5OTk5OTk5OTTnGyH5Qk8W+TDIqTXHihUqAUjvJE/ptscS6YYvFepH7ERP4rXEnuha8438lCL082RtoL7y1Cb1ye2G9HFOd6oifXVmnMmSHSiMXyDZD2c5A+sNZOYixmIo0Sq+Zw/24ARsEKVgyWoBB9YImVkGJOCtODiq+SwgT9p2wU+isreOkeCRMXQV0q1YHgSLCsFxbCxMKy6v1Iye+rMoTjZZsKZmJB22eR/1CU9W2wERXIxFh9S/0fSm81GCybVGCN8/qYRv6LovRYCwArsFbtMRQmbwLpA6sLoYq35QzA83l5SaeQRqyiBJyW22ECljt+mg7TM1in6c9ix9uBIhdnMEyPgoeoLBR7PM3EGg2T70uIanlZQcmrkNw9MtivlUAgebzJdEy+nzXTxrA4gYDfMH2gVKgq6K+XMeVQRRkwKSooVIv69hj6qKW2zAelJWBxbEmtA4EyKXM0f4tCNf1IBdWbMPk+8P4p0ZnA5oBLMyi5QrsAbhRCA0MYlEEP8MheBXYs7GAKdQAbPmoPA5W5x2pTqBrMH7XUwdhbgKKWegLOn2ykL6RZFZg9FXxTKGQTQcsfsknnRt6pLB3ZBpLeP2iJGaEKMyrYPIlLTYJtiU2XGWzDTDEFpKQ8djSD+odEm1RU2HiMt2ZdQotFilJUyIdk4p9hpKBN6SgCFDIlPxjWudr+HeCnhFah2MmwSRh2NHCoCFAxDCUuhoFSobrAbkfwdMQRhHGgVKjgUg/newIykTJd+QYhqx/BqBAo0x5hhIL7BEL3iUCZ9p0jVLgNlMfnQME1ZRnqaOTng9LjVlCGW9ERqkR8an6hY01CcDGFuiBPIUAh5ukZLn3j4odAERoqBIqXpu0wNEwYoeYzYVAeK7B552ec0gJrEihQyOOUVZ1u+kne7YR9MFLrgp6BMtHoI9Wg3RSpycPa4WEB1A5eenjZG6Eo7TDmCUphoYMq4BVmhKJsHLAtlhK/6aAuyJvnUad5+Imx1qtQj/Kow6Acj1SpafUk5lFKtG075umDK+iOQfCSIg44UKdSVB2av6jDa5I69dSYAj5Lh2boD5GHZvihPz5QQMcI3pIjUs3rg+3d03aNd28QdhdhPIVEoIBztWegFpwZoR+WY8eQ8ozXOZ0JL3WGOZVE+uCFxyAxlgOGnflBZ32PP110OIpOzrBNKTasXni0hk+pyFALDyF3e+CxXIj8jNXUORecA2CLz9unGlDG61N3SdHFL41u3amewrJwM+H9CgDjQevLSN+jR9Jvg3csC1cAXh2UifqUme+Qs/doWbkZ9D2BjDedb4w0Yvld8x3L1pXBT7NirLxkxqPFzzRmVfl1o8rSBZznVSUVpUpfSZNYUfUZLWuXGIeNDQ/Kan6Uvkcr4DYvdQ3FHrYFLUpf0Sra0E6RPyWuMybCkOTV8r3Y2mSioYlVWttl2u0OS6mi9GCbSRlDP8ufXpX2tszgh/JqQV3Jaq0b/C2ZSrYrISmFkpTCVFKmdsbat3L+MiPbtb/lcChmnDcMyooV3ro3lbc5xyC3cgMkpaSJzFZB9WvNht99qrtI+ybKtLNu4RqJs7zCJh+lV3le6xsgqPJzV8jslSxKM1l0v0P04GLN0b/fr9lD1/u9PzabfP9Kq5wHB6WA/wkaJycnJycnJycnJycnpz+u/54vUKl7BnxvAAAAAElFTkSuQmCC"
+                            alt="blogger photo">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur dolore alias officiis
+                            blanditiis,
+                            quibusdam maiores.</p>
+                        <button>Know more</button>
+                    </section>
+                    <section>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAY1BMVEX////MzMxNTU3Pz8/JycnGxsbS0tJISEj29vbx8fHW1tZERETr6+s6Ojo/Pz/i4uJaWlqlpaVsbGy5ubmurq6/v7+CgoKVlZWdnZ1kZGSLi4tzc3N8fHxVVVUyMjJfX18kJCTlbK1iAAAFGUlEQVR4nO2b2XarMAxFAwYDJpgxE1yS/P9XXkOTDgmSjTC0Dz6PXS3dkcSxLDu7nZOTk5OTk5OTk5OTk5OTTnGyH5Qk8W+TDIqTXHihUqAUjvJE/ptscS6YYvFepH7ERP4rXEnuha8438lCL082RtoL7y1Cb1ye2G9HFOd6oifXVmnMmSHSiMXyDZD2c5A+sNZOYixmIo0Sq+Zw/24ARsEKVgyWoBB9YImVkGJOCtODiq+SwgT9p2wU+isreOkeCRMXQV0q1YHgSLCsFxbCxMKy6v1Iye+rMoTjZZsKZmJB22eR/1CU9W2wERXIxFh9S/0fSm81GCybVGCN8/qYRv6LovRYCwArsFbtMRQmbwLpA6sLoYq35QzA83l5SaeQRqyiBJyW22ECljt+mg7TM1in6c9ix9uBIhdnMEyPgoeoLBR7PM3EGg2T70uIanlZQcmrkNw9MtivlUAgebzJdEy+nzXTxrA4gYDfMH2gVKgq6K+XMeVQRRkwKSooVIv69hj6qKW2zAelJWBxbEmtA4EyKXM0f4tCNf1IBdWbMPk+8P4p0ZnA5oBLMyi5QrsAbhRCA0MYlEEP8MheBXYs7GAKdQAbPmoPA5W5x2pTqBrMH7XUwdhbgKKWegLOn2ykL6RZFZg9FXxTKGQTQcsfsknnRt6pLB3ZBpLeP2iJGaEKMyrYPIlLTYJtiU2XGWzDTDEFpKQ8djSD+odEm1RU2HiMt2ZdQotFilJUyIdk4p9hpKBN6SgCFDIlPxjWudr+HeCnhFah2MmwSRh2NHCoCFAxDCUuhoFSobrAbkfwdMQRhHGgVKjgUg/newIykTJd+QYhqx/BqBAo0x5hhIL7BEL3iUCZ9p0jVLgNlMfnQME1ZRnqaOTng9LjVlCGW9ERqkR8an6hY01CcDGFuiBPIUAh5ukZLn3j4odAERoqBIqXpu0wNEwYoeYzYVAeK7B552ec0gJrEihQyOOUVZ1u+kne7YR9MFLrgp6BMtHoI9Wg3RSpycPa4WEB1A5eenjZG6Eo7TDmCUphoYMq4BVmhKJsHLAtlhK/6aAuyJvnUad5+Imx1qtQj/Kow6Acj1SpafUk5lFKtG075umDK+iOQfCSIg44UKdSVB2av6jDa5I69dSYAj5Lh2boD5GHZvihPz5QQMcI3pIjUs3rg+3d03aNd28QdhdhPIVEoIBztWegFpwZoR+WY8eQ8ozXOZ0JL3WGOZVE+uCFxyAxlgOGnflBZ32PP110OIpOzrBNKTasXni0hk+pyFALDyF3e+CxXIj8jNXUORecA2CLz9unGlDG61N3SdHFL41u3amewrJwM+H9CgDjQevLSN+jR9Jvg3csC1cAXh2UifqUme+Qs/doWbkZ9D2BjDedb4w0Yvld8x3L1pXBT7NirLxkxqPFzzRmVfl1o8rSBZznVSUVpUpfSZNYUfUZLWuXGIeNDQ/Kan6Uvkcr4DYvdQ3FHrYFLUpf0Sra0E6RPyWuMybCkOTV8r3Y2mSioYlVWttl2u0OS6mi9GCbSRlDP8ufXpX2tszgh/JqQV3Jaq0b/C2ZSrYrISmFkpTCVFKmdsbat3L+MiPbtb/lcChmnDcMyooV3ro3lbc5xyC3cgMkpaSJzFZB9WvNht99qrtI+ybKtLNu4RqJs7zCJh+lV3le6xsgqPJzV8jslSxKM1l0v0P04GLN0b/fr9lD1/u9PzabfP9Kq5wHB6WA/wkaJycnJycnJycnJycnpz+u/54vUKl7BnxvAAAAAElFTkSuQmCC"
+                            alt="blogger photo">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur dolore alias officiis
+                            blanditiis,
+                            quibusdam maiores.</p>
+                        <button>Know more</button>
+                    </section>
+                    <section>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAY1BMVEX////MzMxNTU3Pz8/JycnGxsbS0tJISEj29vbx8fHW1tZERETr6+s6Ojo/Pz/i4uJaWlqlpaVsbGy5ubmurq6/v7+CgoKVlZWdnZ1kZGSLi4tzc3N8fHxVVVUyMjJfX18kJCTlbK1iAAAFGUlEQVR4nO2b2XarMAxFAwYDJpgxE1yS/P9XXkOTDgmSjTC0Dz6PXS3dkcSxLDu7nZOTk5OTk5OTk5OTk5OTTnGyH5Qk8W+TDIqTXHihUqAUjvJE/ptscS6YYvFepH7ERP4rXEnuha8438lCL082RtoL7y1Cb1ye2G9HFOd6oifXVmnMmSHSiMXyDZD2c5A+sNZOYixmIo0Sq+Zw/24ARsEKVgyWoBB9YImVkGJOCtODiq+SwgT9p2wU+isreOkeCRMXQV0q1YHgSLCsFxbCxMKy6v1Iye+rMoTjZZsKZmJB22eR/1CU9W2wERXIxFh9S/0fSm81GCybVGCN8/qYRv6LovRYCwArsFbtMRQmbwLpA6sLoYq35QzA83l5SaeQRqyiBJyW22ECljt+mg7TM1in6c9ix9uBIhdnMEyPgoeoLBR7PM3EGg2T70uIanlZQcmrkNw9MtivlUAgebzJdEy+nzXTxrA4gYDfMH2gVKgq6K+XMeVQRRkwKSooVIv69hj6qKW2zAelJWBxbEmtA4EyKXM0f4tCNf1IBdWbMPk+8P4p0ZnA5oBLMyi5QrsAbhRCA0MYlEEP8MheBXYs7GAKdQAbPmoPA5W5x2pTqBrMH7XUwdhbgKKWegLOn2ykL6RZFZg9FXxTKGQTQcsfsknnRt6pLB3ZBpLeP2iJGaEKMyrYPIlLTYJtiU2XGWzDTDEFpKQ8djSD+odEm1RU2HiMt2ZdQotFilJUyIdk4p9hpKBN6SgCFDIlPxjWudr+HeCnhFah2MmwSRh2NHCoCFAxDCUuhoFSobrAbkfwdMQRhHGgVKjgUg/newIykTJd+QYhqx/BqBAo0x5hhIL7BEL3iUCZ9p0jVLgNlMfnQME1ZRnqaOTng9LjVlCGW9ERqkR8an6hY01CcDGFuiBPIUAh5ukZLn3j4odAERoqBIqXpu0wNEwYoeYzYVAeK7B552ec0gJrEihQyOOUVZ1u+kne7YR9MFLrgp6BMtHoI9Wg3RSpycPa4WEB1A5eenjZG6Eo7TDmCUphoYMq4BVmhKJsHLAtlhK/6aAuyJvnUad5+Imx1qtQj/Kow6Acj1SpafUk5lFKtG075umDK+iOQfCSIg44UKdSVB2av6jDa5I69dSYAj5Lh2boD5GHZvihPz5QQMcI3pIjUs3rg+3d03aNd28QdhdhPIVEoIBztWegFpwZoR+WY8eQ8ozXOZ0JL3WGOZVE+uCFxyAxlgOGnflBZ32PP110OIpOzrBNKTasXni0hk+pyFALDyF3e+CxXIj8jNXUORecA2CLz9unGlDG61N3SdHFL41u3amewrJwM+H9CgDjQevLSN+jR9Jvg3csC1cAXh2UifqUme+Qs/doWbkZ9D2BjDedb4w0Yvld8x3L1pXBT7NirLxkxqPFzzRmVfl1o8rSBZznVSUVpUpfSZNYUfUZLWuXGIeNDQ/Kan6Uvkcr4DYvdQ3FHrYFLUpf0Sra0E6RPyWuMybCkOTV8r3Y2mSioYlVWttl2u0OS6mi9GCbSRlDP8ufXpX2tszgh/JqQV3Jaq0b/C2ZSrYrISmFkpTCVFKmdsbat3L+MiPbtb/lcChmnDcMyooV3ro3lbc5xyC3cgMkpaSJzFZB9WvNht99qrtI+ybKtLNu4RqJs7zCJh+lV3le6xsgqPJzV8jslSxKM1l0v0P04GLN0b/fr9lD1/u9PzabfP9Kq5wHB6WA/wkaJycnJycnJycnJycnpz+u/54vUKl7BnxvAAAAAElFTkSuQmCC"
+                            alt="blogger photo">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur dolore alias officiis
+                            blanditiis,
+                            quibusdam maiores.</p>
+                        <button>Know more</button>
+                    </section>
+                </div>
+    </main>
+    <footer>
+        <section>
+            <ul>
+                <h3>Lorem ipsum</h3>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <h3>Lorem ipsum</h3>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+        <section>
+            <ul>
+                <h3>Lorem ipsum</h3>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+    </footer>
+</body>
+
+</html>
